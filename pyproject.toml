@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nicegui-stellarium"
+version = "0.1.0"
+description = "Interactive planetarium widget for NiceGUI based on stellarium-web-engine"
+readme = "README.md"
+license = "AGPL-3.0-only"
+requires-python = ">=3.9"
+authors = [
+    { name = "Andrej Prša" }
+]
+keywords = ["nicegui", "stellarium", "planetarium", "astronomy", "webgl", "widget"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Astronomy",
+]
+
+dependencies = [
+    "nicegui>=1.4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+]
+
+[project.urls]
+Homepage = "https://github.com/aprsa/nicegui-stellarium"
+Repository = "https://github.com/aprsa/nicegui-stellarium"
+Issues = "https://github.com/aprsa/nicegui-stellarium/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["stellarium_widget"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "stellarium_widget/",
+    "extern/stellarium/build/stellarium-web-engine.js",
+    "extern/stellarium/build/stellarium-web-engine.wasm",
+    "extern/stellarium/apps/test-skydata/",
+    "README.md",
+    "LICENSE",
+]
