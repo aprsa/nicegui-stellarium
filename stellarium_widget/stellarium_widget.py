@@ -75,7 +75,12 @@ class StellariumConfig:
             js_file = self.build_dir / 'stellarium-web-engine.js'
             if not js_file.exists():
                 raise FileNotFoundError(
-                    f"stellarium-web-engine.js not found at {js_file}"
+                    f"stellarium-web-engine.js not found at {js_file}\n\n"
+                    "The Stellarium Web Engine must be fetched and built separately.\n"
+                    "Run these commands:\n\n"
+                    "  nicegui-stellarium-fetch-engine\n"
+                    "  cd extern/stellarium && make js\n\n"
+                    "See https://github.com/nicegui-stellarium for details."
                 )
 
     def _set_urls(self) -> None:

@@ -28,6 +28,22 @@ cd nicegui-stellarium
 pip install -e .
 ```
 
+### Fetching the Engine
+
+The stellarium-web-engine is not included in this repository. Fetch and build it:
+
+```bash
+# Clone the engine
+nicegui-stellarium-fetch-engine
+
+# Build (requires Emscripten SDK)
+cd extern/stellarium
+source /path/to/emsdk/emsdk_env.sh
+make js
+```
+
+See [extern/README.md](extern/README.md) for detailed build instructions.
+
 ## Quick Start
 
 ```python

@@ -41,6 +41,9 @@ Homepage = "https://github.com/aprsa/nicegui-stellarium"
 Repository = "https://github.com/aprsa/nicegui-stellarium"
 Issues = "https://github.com/aprsa/nicegui-stellarium/issues"
 
+[project.scripts]
+nicegui-stellarium-fetch-engine = "stellarium_widget.scripts:fetch_engine"
+
 [tool.hatch.build.targets.wheel]
 packages = ["stellarium_widget"]
 
